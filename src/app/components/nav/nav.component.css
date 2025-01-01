@@ -1,0 +1,49 @@
+/* Background Color for Navbar */
+.navbar {
+  background-color: #cebde0; /* Dark blue for a professional look */
+  padding: 0; /* Remove all padding */
+  margin: 0; /* Remove any margin */
+}
+
+
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #b5ace5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+  color: #ffcc00; /* Accent color for hover effect */
+}
+
+/* Ensure navbar text color and styling is clean */
+.navbar-text {
+  font-size: 1rem;
+  color: #f0f0f0; /* Light grey text for better contrast */
+}
+
+.navbar-nav .nav-item {
+  margin-left: 30px;
+}
+
+.navbar-nav .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.navbar-nav .btn-outline-light:hover {
+  background-color: #fff;
+  color: #003366;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-item {
+      margin-left: 10px;
+  }
+
+  .navbar-brand {
+      font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="container py-5">
+    <h2 class="text-center mb-5">Your Car Details</h2>
+  
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Car 1 -->
+      <div class="col" *ngFor="let c of car">
+        <div class="card shadow-lg border-light">
+          <div class="card-body">
+            <h5 class="card-title">{{c.car_name}}</h5>
+            <p class="card-text"><strong>Type:</strong> {{c.car_type}}</p>
+            <p class="card-text"><strong>Model:</strong> {{c.model}}</p>
+            <p class="card-text"><strong>Year:</strong> {{c.year}}</p>
+            <p class="card-text"><strong>Driven KM:</strong> {{c.driven_km}} km</p>
+            <p class="card-text"><strong>Mileage:</strong> {{c.Mileage}} km/l</p>
+            <button class="btn btn-primary" [routerLink]="['/renter-page/car-list/car-history', c.id]">Car History</button>
+
+          </div>
+        </div>
+      </div>
+      </div>
+      

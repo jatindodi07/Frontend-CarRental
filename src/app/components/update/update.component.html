@@ -1,0 +1,83 @@
+<div class="container mt-4">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="alert alert-primary" *ngIf="mssg"
+        >
+            {{mssg}}
+        </div>
+      <!-- Name -->
+       <div class="text-center mb-2 fw-bold text-primary"> <h3>Update User Details</h3>
+       </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+          placeholder="Enter your name"
+        />
+      </div>
+  
+      <!-- Username -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          formControlName="username"
+        />
+      </div>
+  
+      <!-- Address: City -->
+      <div class="mb-3">
+        <label for="city" class="form-label">City</label>
+        <input
+          type="text"
+          id="city"
+          class="form-control"
+          formControlName="city"
+        />
+      </div>
+  
+      <!-- Address: State -->
+      <div class="mb-3">
+        <label for="state" class="form-label">State</label>
+        <input
+          type="text"
+          id="state"
+          class="form-control"
+          formControlName="state"
+          placeholder="Enter your state"
+        />
+      </div>
+  
+      <!-- Address: Pincode -->
+      <div class="mb-3">
+        <label for="pincode" class="form-label">Pincode</label>
+        <input
+          type="text"
+          id="pincode"
+          class="form-control"
+          formControlName="pincode"
+          placeholder="Enter your pincode"
+        />
+      </div>
+  
+      <!-- Address: Street -->
+      <div class="mb-3">
+        <label for="street" class="form-label">Street</label>
+        <input
+          type="text"
+          id="street"
+          class="form-control"
+          formControlName="street"
+          placeholder="Enter your street"
+        />
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  

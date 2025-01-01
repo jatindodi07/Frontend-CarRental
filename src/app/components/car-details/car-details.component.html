@@ -1,0 +1,114 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Add Car Details</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+          <div class="alert alert-primary mb-4" *ngIf="msg">
+            {{msg}}
+        </div>
+          <div class="mb-3">
+            <label for="carType" class="form-label">Car Type</label>
+            <select id="carType" class="form-select" formControlName="car_type">
+              <option *ngFor="let type of t" value={{type}}>{{type}}</option>
+            </select>
+          </div>
+           <!-- Car Company -->
+           <div class="mb-3">
+            <label for="carName" class="form-label">Car Company</label>
+            <input
+              type="text"
+              id="carName"
+              class="form-control"
+              formControlName="car_company"
+              placeholder="Enter car's company name"
+            />
+          </div>
+  
+          <!-- Car Name -->
+          <div class="mb-3">
+            <label for="carName" class="form-label">Car Name</label>
+            <input
+              type="text"
+              id="carName"
+              class="form-control"
+              formControlName="car_name"
+              placeholder="Enter car name"
+            />
+          </div>
+  
+          <!-- Model -->
+          <div class="mb-3">
+            <label for="model" class="form-label">Model</label>
+            <input
+              type="text"
+              id="model"
+              class="form-control"
+              formControlName="model"
+              placeholder="Enter model"
+            />
+          </div>
+  
+          <!-- Year -->
+          <div class="mb-3">
+            <label for="year" class="form-label">Year</label>
+            <input
+              type="number"
+              id="year"
+              class="form-control"
+              formControlName="year"
+              placeholder="Enter year"
+            />
+          </div>
+  
+          <!-- Driven KM -->
+          <div class="mb-3">
+            <label for="drivenKm" class="form-label">Driven KM</label>
+            <input
+              type="number"
+              id="drivenKm"
+              class="form-control"
+              formControlName="driven_km"
+              placeholder="Enter driven kilometers"
+            />
+          </div>
+  
+          <!-- Mileage -->
+          <div class="mb-3">
+            <label for="mileage" class="form-label">Mileage</label>
+            <input
+              type="number"
+              id="mileage"
+              class="form-control"
+              formControlName="mileage"
+              placeholder="Enter mileage"
+            />
+          </div>
+  
+          <!-- Purpose -->
+          <div class="mb-3">
+            <label for="purpose" class="form-label">Purpose</label>
+            <select id="purpose" class="form-select" formControlName="purpose">
+           <option *ngFor="let purpose of p" value={{purpose}}>{{purpose}}</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col lg 6">
+
+                <a routerLink="upload-photos" class="btn btn-primary btn-lg" *ngIf="submited" >upload-photos</a>
+            </div>
+            <div class="col lg 6">
+
+          
+                <button type="submit" class="btn btn-primary btn-lg" [disabled]="carForm.invalid || submited ">Submit</button>
+            </div>
+
+          </div>
+        
+        
+        </form>
+      </div>
+    </div>
+  </div>
+  

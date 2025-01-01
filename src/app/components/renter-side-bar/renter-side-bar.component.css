@@ -1,0 +1,98 @@
+/* Overall layout */
+nav {
+    width: 250px;
+    background-color: #ffffff;
+    height: 100vh;
+    padding-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Profile Info Section */
+.profile-info {
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.profile-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h4 {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.profile-info p {
+    color: #bbb;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.profile-info p strong {
+    color: #fff;
+}
+
+/* List Group (Navigation Items) */
+.list-group {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-group-item {
+    background-color: #34495e;
+    border: none;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+}
+
+.list-group-item a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.list-group-item a i {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.list-group-item:hover {
+    background-color: #16a085;
+}
+
+.list-group-item:hover a {
+    color: #fff;
+}
+
+/* Media Query for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .profile-info img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-info h4 {
+        font-size: 1.2rem;
+    }
+
+    .list-group-item a {
+        font-size: 1rem;
+    }
+}
+.profile-info h4,
+.profile-info p,
+.profile-info strong {
+    color: #000000; /* Black color */
+}

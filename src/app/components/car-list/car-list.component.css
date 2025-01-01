@@ -1,0 +1,45 @@
+/* Gradient Header */
+.bg-gradient {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+  }
+  
+  /* Text for Gradient */
+  .text-white {
+    color: white !important;
+  }
+  
+  /* Main Section Background */
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+  
+  /* Card Hover Effects */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+  }
+  
+  .card-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Button Effects */
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  .btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+    border-color: #218838;
+  }
+  
+  /* Padding for Cards */
+  .card-body {
+    padding: 20px;
+  }
+  

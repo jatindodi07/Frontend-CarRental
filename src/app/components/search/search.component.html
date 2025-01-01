@@ -1,0 +1,83 @@
+<!-- Header Section -->
+<header class="bg-light py-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-2">
+        <h3 class="text-primary">Check Availability</h3>
+      </div>
+
+      <div class="col-md-10">
+        <form [formGroup]="availibilityForm" class="row g-3" (ngSubmit)="onSubmit()">
+          <!-- Pickup Date Input -->
+          <div class="col-md-2">
+            <label for="pickupDate" class="form-label">Pickup Date</label>
+            <input type="date" class="form-control" id="pickupDate" formControlName="pickupDate">
+          </div>
+
+          <!-- Drop Date Input -->
+          <div class="col-md-2">
+            <label for="dropDate" class="form-label">Drop Date</label>
+            <input type="date" class="form-control" id="dropDate" formControlName="dropDate">
+          </div>
+
+          <!-- Search Button -->
+          <div class="col-md-1 d-flex align-items-center">
+            <button type="submit" class="btn btn-primary" [disabled]="availibilityForm.invalid ||!isPickupBeforeDrop()">Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Availability Check Result -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card text-center shadow-sm">
+        <div class="card-header bg-success text-white" *ngIf="mssg">
+          <h4>{{mssg}}</h4>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Your selected {{mssg}}!</h5>
+          <p class="card-text text-muted" *ngIf="!mssg">
+            Enter Details on top to check its availability
+          </p>
+          <button class="btn btn-success" *ngIf="mssg === 'Car is Available For Booking'" (click)="handleBooking()">Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Car Booking Details -->
+<div class="container mt-5" *ngIf="book">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white text-center">
+      <div *ngIf="bookingMssg" class="alert alert-success">
+        {{bookingMssg}}
+      </div>
+      <h4>Car Booking Details</h4>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <!-- Car Details -->
+        <div class="col-md-8">
+          <h5 class="card-title">Car Name: <strong>{{car.car_name}}</strong></h5>
+          <p class="card-text">Car Type: <strong>{{car.car_type}}</strong></p>
+          <p class="card-text">Price Per Day: <strong>{{rentalPrice}}</strong></p>
+          <p class="card-text">Pickup Date: <strong>{{availibilityForm.value.pickupDate}}</strong></p>
+          <p class="card-text">Return Date: <strong>{{availibilityForm.value.dropDate}}</strong></p>
+          <p class="card-text text-success">
+            Total Price: <strong>{{totalPrice}}</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Booking Button -->
+      <div class="text-center mt-4">
+        <button class="btn btn-primary btn-lg" (click)="confirmBooking()">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>

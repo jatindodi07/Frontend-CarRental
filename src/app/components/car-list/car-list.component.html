@@ -1,0 +1,82 @@
+<div>
+  <!-- Header Section -->
+  <header class="bg-gradient py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-2">
+          <h3 class="text-white font-weight-bold">Check Availability</h3>
+        </div>
+        <div class="col-md-10">
+          <form [formGroup]="inputLocationForm" class="row g-3" (ngSubmit)="onSubmit()">
+            <!-- Location Input Fields -->
+            <div class="col-md-3">
+              <label for="state" class="form-label text-white">State</label>
+              <input type="text" class="form-control rounded-pill border-light shadow-sm" id="state"
+                placeholder="Enter State" formControlName="state" />
+            </div>
+            <div class="col-md-3">
+              <label for="city" class="form-label text-white">City</label>
+              <input type="text" class="form-control rounded-pill border-light shadow-sm" id="city"
+                placeholder="Enter City" formControlName="city" />
+            </div>
+
+            <!-- Search Button -->
+            <div class="col-md-2 d-flex align-items-center justify-content-center">
+              <button type="submit" class="btn btn-light rounded-pill shadow" [disabled]="inputLocationForm.invalid"
+                style="width: 100%">
+                <i class="fas fa-search"></i> Search
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <div class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Select Region to Display Cars</h2>
+      <div class="row g-4">
+        <div *ngFor="let car of carData" class="col-md-4">
+          <div class="card card-hover h-100">
+            <div class="card-body">
+
+              <!-- Carousel Section: Car Images -->
+              <div id="carousel-{{car.id}}" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item" *ngFor="let img of car.carImage; let first = first" [class.active]="first">
+                    <img src="{{ img.path }}" class="d-block w-100" alt="Car image" style="height: 200px;" />
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel-' + car.id"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel-' + car.id"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+
+              <h5 class="card-title">{{ car.car_name }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ car.car_company }} - {{ car.car_type }}</h6>
+              <ul class="list-group list-group-flush mb-3">
+                <li class="list-group-item">Model: {{ car.model }}</li>
+                <li class="list-group-item">Year: {{ car.year }}</li>
+              </ul>
+              <div class="d-flex justify-content-between">
+
+                <a routerLink="available" class="btn btn-outline-success btn-sm" (click)="saveCarId(car.id)">Check
+                  Availability</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

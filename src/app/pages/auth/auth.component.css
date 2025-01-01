@@ -1,0 +1,19 @@
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #d4edda;
+    }
+    .hero-section {
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+    }
+    .car-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+    .card-title {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+    }
+   

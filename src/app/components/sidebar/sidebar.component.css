@@ -1,0 +1,66 @@
+/* Sidebar Link Styling */
+.sidebar-link {
+  text-decoration: none;
+  color: #168aa7; /* Light grayish white text */
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Sidebar Links */
+.sidebar-link:hover {
+  background-color: #2980B9; /* Blue background on hover */
+  color: #FFFFFF; /* White text on hover */
+}
+
+.sidebar-link:hover strong {
+  color: #7e0a0a; /* Change color of <strong> tags to white on hover */
+}
+
+/* Styling for <strong> tags */
+.sidebar-link strong {
+  font-weight: bold;
+  transition: color 0.3s ease;
+  color: #0e1011; /* Muted light gray for <strong> text by default */
+}
+
+/* Active Link Styling */
+.sidebar-link.active {
+  background-color: #16A085; /* Teal background when active */
+  color: #FFFFFF; /* White text when active */
+}
+
+.sidebar-link.active strong {
+  color: #a54c4c; /* White color for <strong> text when active */
+}
+
+/* List Item Styling */
+.list-group-item {
+  background-color:rgb(255, 255, 255);
+  border: none;
+  padding: 12px 15px;
+}
+
+/* Sidebar Background */
+.sidebar {
+  width: 250px;
+  background-color: #ffffff; /* Dark blue-gray background */
+  color: #ECF0F1; /* Light grayish white text */
+  height: 200vh;
+  padding: 10px;
+  position: flex;
+  top: px;  /* Adjusted to prevent overlapping with the header */
+  left: 0;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;  /* Ensure the sidebar stays on top */
+  overflow-y: auto; /* Makes sidebar scrollable if needed */
+}
+/* Make all text black in the profile info */
+.profile-info h4,
+.profile-info p,
+.profile-info strong {
+    color: #000000; /* Black color */
+}

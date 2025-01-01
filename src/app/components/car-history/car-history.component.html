@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Rental Details</h4>
+        </div>
+        <div class="card-body " *ngFor="let bd of bookingDetail"  >
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <p><strong>Renter Name:</strong> {{bd.user.name}}</p>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <p><strong>Pickup Date:</strong>{{bd.pickup_date}}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Drop Date:</strong>{{bd.return_date}} </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-success"><strong>Total Price: {{bd.price}}</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
